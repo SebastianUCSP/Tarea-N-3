@@ -33,12 +33,28 @@ void ordenar(int arr[], const int len){
       for(int j = 0; j < len-i-1; j++){
          if(arr[j] > arr[j+1]){
                 swap(arr[j], arr[j+1]);
+
          }
       }
     }
 }
 
+void Primo(const int x){
+    int cont = 0;
+    for(int i = 2; i < x; i++){
+        if(x % i == 0){
+            cont ++;
+        }
+    }
+    if(cont == 0)
+        cout << x << " ";
+}
 
+void Primoenlista(const int arr[], const int len){
+    for(int i = 0; i < len; i++){
+            Primo(arr[i]);
+    }
+}
 int main()
 {
     int x = 0;
@@ -72,5 +88,11 @@ int main()
         cout << arr3[i] << " ";
 
     cout << endl;
+
+    Primo(8);
+
+    cout << endl;
+
+    Primoenlista(arr3, 9);
     return 0;
 }
